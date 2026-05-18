@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=poppins:400,500&display=swap" />
+<script src="https://cdn.jsdelivr.net/npm/es-module-shims@2.8.0/dist/es-module-shims.min.js"></script>
+  <script type="importmap">
+    {
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.183.2/examples/jsm/"
+  }
+}
+  </script>
+  <title>Virtual Lab – EDTA Titration</title>
+
+ <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+
+<div class="container">
+  <div class="experiment-title">DETERMINATION OF TOTAL HARDNESS OF A SAMPLE OF WATER</div>
+  
+    <!-- 3D Canvas -->
+     <div class="app">
+       <div id="canvas-container" class="canvas-container">Loading...</div>
+      </div>
+
+     <!-- Controls -->
+     <div id="controls" class="controls">
+        <h4>INSTRUCTIONS</h4>
+        <p>Identify the apparatus used in the experiment.</p>
+        <div class="apparatus-quiz">
+          <div class="score-attempts">
+          <p class="score" id="score">Your score: 0/0</p>
+          <p class="attempts" id="attempts">Attempts: 0</p>
+          </div>
+          <input type="radio" class="apparatus-option" value="burette" name="apparatus">Burette</input>
+          <input type="radio"  class="apparatus-option" value="flask" name="apparatus">Flask</input>
+          <input type="radio" class="apparatus-option" value="pipette" name="apparatus">Pipette</input>
+          <input type="radio" class="apparatus-option" value="beaker" name="apparatus">Beaker</input>
+          <button class="quiz-btn">Submit</button>
+        </div>
+        <div class="result-bar"></div>
+     </div>
+      <div class="copyright">© 2023 Virtual Lab. All rights reserved.</div>
+</div>
+
+<!-- Main Entry Script -->
+<script type="module" src="./src/main.js"></script>  
+
+</body>
+</html> 
