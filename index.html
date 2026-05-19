@@ -27,17 +27,34 @@
   
     <!-- 3D Canvas -->
      <div class="app">
-       <div id="canvas-container" class="canvas-container">Loading...</div>
+      <div class="screen-info">
+        <h2>Let's Begin!</h2>
+        <p>Explore the titration process and identify the apparatus used in the experiment.</p>
+        <button id="start-btn" class="start-btn">Start Experiment</button>
+      </div>
+       <div id="canvas-container" class="canvas-container"></div>
+       <div class="procedure">
+        <h3>Experiment Procedure:</h3>
+        <ol>
+          <li>Fill the beaker with the water sample.</li>
+          <li>Use the pipette to transfer a specific volume of the water sample into the flask.</li>
+          <li>Add a few drops of indicator to the flask.</li>
+          <li>Fill the burette with EDTA solution and note the initial reading.</li>
+          <li>Slowly add EDTA from the burette to the flask while swirling until the endpoint is reached (color change).</li>
+          <li>Note the final reading on the burette.</li>
+          <li>Calculate the total hardness of the water sample using the volume of EDTA used.</li>
+        </ol>
+       </div>
       </div>
 
      <!-- Controls -->
-     <div id="controls" class="controls">
+     <div id="controls" class="controls hidden">
         <h4>INSTRUCTIONS</h4>
-        <p>Identify the apparatus used in the experiment.</p>
+        <p>Identify the apparatus by choosing the options below:</p>
         <div class="apparatus-quiz">
           <div class="score-attempts">
-          <p class="score" id="score">Your score: 0/0</p>
-          <p class="attempts" id="attempts">Attempts: 0</p>
+          <span class="score" id="score">Your score: 0/0</span>
+          <span class="attempts" id="attempts">Attempts: 0</span>
           </div>
           <input type="radio" class="apparatus-option" value="burette" name="apparatus">Burette</input>
           <input type="radio"  class="apparatus-option" value="flask" name="apparatus">Flask</input>

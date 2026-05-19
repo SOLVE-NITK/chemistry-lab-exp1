@@ -21,6 +21,22 @@ const pipette = createPipette(scene);
 const apparatus = getApparatusList();
 
 
+// screen info and start button
+const startBtn = document.getElementById("start-btn");
+const screenInfo = document.querySelector(".screen-info");
+const controlsPanel = document.getElementById("controls");
+startBtn.addEventListener("click", () => {
+  screenInfo.style.display = "none";
+  controlsPanel.classList.remove("hidden");
+  setupQuiz();
+  // setupUI();
+  // setupSceneLayout({ table, flask, burette, beaker, pipette });
+  // setUpFlask(flask);  
+  // setUpBurette(burette);
+  // setUpBeaker(beaker);
+  // setUpPipette(pipette);
+});
+
 let quizIndex = 0;
 let attempts = 0;
 let score = 0;
@@ -40,7 +56,7 @@ setupSelection(camera, renderer, [flask, burette, beaker, pipette]);
 
 
 // Apparatus Identification Quiz
-setupQuiz();
+
 function setupQuiz(quizIndex = 0) {
   apparatus[quizIndex].function(scene, apparatus[quizIndex].name === "flask" ? flask : apparatus[quizIndex].name === "burette" ? burette : apparatus[quizIndex].name === "beaker" ? beaker : pipette);
 
@@ -59,7 +75,17 @@ function evaluateQuiz(){
     quizIndex++; 
     attempts = 0;
     scene.remove(scene.getObjectByName(apparatus[quizIndex-1].name));
-    setupQuiz(quizIndex); 
+    if(quizIndex < totalQuestions){
+      setupQuiz(quizIndex); 
+    } else if(quizIndex === totalQuestions){ 
+      // scene.remove(scene.getObjectByName(apparatus[quizIndex-1].name));
+      resultView.textContent = `Quiz Completed! Final Score: ${score} / ${totalQuestions}`;
+      resultView.classList.add("hidden");
+      screenInfo.style.display = "block";
+      screenInfo.innerHTML = `<h2>Quiz Completed!</h2><p>Your final score is ${score} out of ${totalQuestions}.</p>`;
+        setupSceneLayout({ table, flask, burette, beaker, pipette });
+      controlsPanel.classList.add("hidden");
+    }
   }
   else{
     resultView.textContent = "Incorrect. Try again.";

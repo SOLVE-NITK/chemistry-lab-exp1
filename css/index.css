@@ -59,6 +59,34 @@ body {
   border: 0.02rem solid var(--primary-color);
   border-radius: 0.5rem;
   overflow: hidden;
+  position: relative;
+}
+
+.screen-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.start-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background-color: #0a4435;
 }
 
 .canvas-container {
@@ -70,6 +98,15 @@ body {
   margin: 0.25rem;
   justify-self: center;
   
+}
+
+.procedure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .controls h4{
@@ -89,11 +126,35 @@ body {
   position: relative;
 }
 
+.apparatus-option {
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
 .score-attempts{
   position: absolute;
-  top: -1.5rem;
-  right: 2.0rem;
+  top: -1.2rem;
+  right: 8.0rem;
   color: var(--primary-color); 
+}
+
+.quiz-btn{
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.quiz-btn:hover {
+  background-color: #0a4435;
 }
 
 .result-bar{
@@ -131,4 +192,8 @@ body {
   margin-top: 1rem;
   font-size: 1.4rem;
   color: var(--primary-color);
+}
+
+.hidden{
+  display: none;
 }

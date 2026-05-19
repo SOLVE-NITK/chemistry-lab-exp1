@@ -1,4 +1,5 @@
 
+ import { animateAppear } from "../animations/appear.js";
  const apparatusList = [
   {
     index: 0,
@@ -31,19 +32,23 @@
  export function setUpFlask(scene, flask) {
   flask.position.set(0, -1.7, 0);
   scene.add(flask);
+  animateAppear(flask);
  }
 
  export function setUpBurette(scene, burette) {
   burette.position.set(0, -1.7, 0);
   scene.add(burette);
+  animateAppear(burette);
  }
 
  export function setUpBeaker(scene, beaker) {
   beaker.position.set(0, -1.7, 0);
   scene.add(beaker);
+  animateAppear(beaker);
  }
 
  export function setUpPipette(scene, pipette) {
   pipette.position.set(0, 1.2, -1.2);
   scene.add(pipette);
+  animateAppear(pipette);
  }
