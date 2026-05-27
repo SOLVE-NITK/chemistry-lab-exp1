@@ -5,7 +5,7 @@ import { createTable } from './objects/Table.js';
 import { createBeaker } from './objects/Beaker.js';
 import { createPipette } from './objects/Pipette.js';
 import { createWeighingBottle } from './objects/WeighingBottle.js';
-import { createElectronicBalance } from './objects/balance.js';
+import { createElectronicBalance } from './objects/Balance.js';
 import { createFunnel } from './objects/Funnel.js';
 import { createWashBottle } from './objects/Washbottle.js';
 import { createEDTACrystals } from './objects/EDTAcrystals.js';
