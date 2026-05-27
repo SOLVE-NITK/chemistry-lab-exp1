@@ -54,7 +54,7 @@ body {
 }
 
 .app{
-  height: 80vh;
+  height: 70svh;
   color: var(--primary-color);
   border: 0.02rem solid var(--primary-color);
   border-radius: 0.5rem;
@@ -74,7 +74,16 @@ body {
   border-radius: 0.5rem;
 }
 
-.start-btn {
+.info-btn {
+ 
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  
+}
+
+.btn, .start-btn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.6rem;
@@ -97,16 +106,92 @@ body {
   font-size: 1.8rem;
   margin: 0.25rem;
   justify-self: center;
-  
+  z-index: 1;
 }
 
 .procedure {
+  z-index: 20;
+  position: absolute;
+  top:0;
+  left:0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.5rem;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+/* DARK OVERLAY */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* HIDE */
+
+.hidden {
+  display: none;
+}
+
+/* POPUP BOX */
+
+.modal-content {
+  width: 70%;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: popup 0.3s ease;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn {
+
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: crimson;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* TEXT */
+
+.procedure-text {
+  line-height: 2.4rem;
+  padding: 2rem;
+  color: #333;
+}
+
+/* ANIMATION */
+
+@keyframes popup {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .controls h4{
@@ -118,6 +203,7 @@ body {
 }
 
 .apparatus-quiz {
+  padding:1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -126,11 +212,12 @@ body {
   position: relative;
 }
 
-.apparatus-option {
+.quiz-options {
+  display: flex;
+  gap: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.6rem;
-  color: var(--secondary-color);
-  background-color: var(--primary-color);
+  color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 0.5rem;
   cursor: pointer;
@@ -158,6 +245,9 @@ body {
 }
 
 .result-bar{
+  position: absolute;
+  top: 0;
+  left:25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,9 +271,6 @@ body {
   color: #fff;
 }
 
-.apparatus-option {
- 
-}
 
 
 .copyright {
@@ -196,4 +283,23 @@ body {
 
 .hidden{
   display: none;
+}
+
+
+/* media queries */
+@media (max-width: 768px) {
+  .screen-info {
+    font-size: 1.2rem;
+  }
+
+  .btn, .start-btn {
+    font-size: 1.2rem;
+  }
+
+  body{
+    width: 100%;
+  }
+  .container{
+    width: 100%;
+  }
 }

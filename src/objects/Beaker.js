@@ -52,6 +52,6 @@ export function createBeaker(scene) {
   labelMesh.scale.set(1.01, 1.01, 1.01);
   beaker.add(labelMesh)
   
-
+  beaker.name = "beaker";
   return beaker;
 }

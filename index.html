@@ -17,6 +17,8 @@
   <title>Virtual Lab – EDTA Titration</title>
 
  <link rel="stylesheet" href="./css/index.css">
+ <!-- Main Entry Script -->
+<script defer type="module" src="./src/main.js"></script> 
 </head>
 
 <body>
@@ -27,23 +29,48 @@
   
     <!-- 3D Canvas -->
      <div class="app">
+      <div class="result-bar"></div>
       <div class="screen-info">
         <h2>Let's Begin!</h2>
         <p>Explore the titration process and identify the apparatus used in the experiment.</p>
         <button id="start-btn" class="start-btn">Start Experiment</button>
       </div>
        <div id="canvas-container" class="canvas-container"></div>
-       <div class="procedure">
-        <h3>Experiment Procedure:</h3>
+       <div class="procedure hidden">
+        <button id="infoBtn" class="info-btn">⚗️Procedure🧪</button>
+        <!-- PROCEDURE POPUP -->
+      <div id="procedureModal" class="modal hidden">
+        <div class="modal-content">
+        <button id="closeModal" class="close-btn">
+          ✖
+        </button>
+       <h2>Experiment Procedure</h2>
+      <div class="procedure-text">
+        <h3>Part A: Preparation of Standard EDTA Solution</h3>
         <ol>
-          <li>Fill the beaker with the water sample.</li>
-          <li>Use the pipette to transfer a specific volume of the water sample into the flask.</li>
-          <li>Add a few drops of indicator to the flask.</li>
-          <li>Fill the burette with EDTA solution and note the initial reading.</li>
-          <li>Slowly add EDTA from the burette to the flask while swirling until the endpoint is reached (color change).</li>
-          <li>Note the final reading on the burette.</li>
-          <li>Calculate the total hardness of the water sample using the volume of EDTA used.</li>
+          <li>Weigh the weighing bottle containing the required amount of disodium salt of EDTA using an electronic balance and record the weight.</li>   
+          <li>Transfer the EDTA crystals carefully into a 250 mL volumetric flask using a funnel.</li>
+          <li>Weigh the empty weighing bottle again and record the weight to determine the exact amount of EDTA used.</li>
+          <li>Add ion-exchange water through the funnel to ensure all crystals are transferred into the flask.</li>
+          <li>Wash the funnel with ion-exchange water to transfer any remaining crystals into the flask.</li>
+          <li>Remove the funnel and gently swirl the flask to dissolve the EDTA crystals completely.</li>
+          <li>Add ion-exchange water to the flask until the solution reaches the calibration mark.</li>
+          <li>Stopper the flask and mix thoroughly by inverting it several times to obtain a homogeneous solution.</li>
         </ol>
+        <h3>Part B: Determination of Total Hardness of Water Sample</h3>
+        <ol>
+          <li>Pipette out 25 mL of the given water sample into a clean conical flask.</li>
+          <li>Add 3 mL of NH₃–NH₄Cl buffer solution to the flask.</li>
+          <li>Add a pinch of Eriochrome Black T indicator to the solution.</li>
+          <li>Observe that the solution turns wine red in color.</li>
+          <li>Titrate the solution with the standard EDTA solution from the burette.</li>
+          <li>Continue titration until the color changes from wine red to clear blue (end point).</li>
+          <li>Record the volume of EDTA used.</li>
+          <li>Repeat the titration to obtain consistent (concordant) readings.</li>
+        </ol>
+    </div>
+  </div>
+</div>
        </div>
       </div>
 
@@ -56,19 +83,16 @@
           <span class="score" id="score">Your score: 0/0</span>
           <span class="attempts" id="attempts">Attempts: 0</span>
           </div>
-          <input type="radio" class="apparatus-option" value="burette" name="apparatus">Burette</input>
-          <input type="radio"  class="apparatus-option" value="flask" name="apparatus">Flask</input>
-          <input type="radio" class="apparatus-option" value="pipette" name="apparatus">Pipette</input>
-          <input type="radio" class="apparatus-option" value="beaker" name="apparatus">Beaker</input>
+          <div class="quiz-options">
+
+          </div>
           <button class="quiz-btn">Submit</button>
         </div>
-        <div class="result-bar"></div>
      </div>
       <div class="copyright">© 2023 Virtual Lab. All rights reserved.</div>
 </div>
 
-<!-- Main Entry Script -->
-<script type="module" src="./src/main.js"></script>  
+ 
 
 </body>
 </html> 

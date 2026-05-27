@@ -139,5 +139,7 @@ stand.add(clamp);
 stand.position.y = 1; // lift above table
 stand.name = "burette";
 stand.position.x = -2.3; // shift left
+
+stand.name = "burette";
 return stand;
 }

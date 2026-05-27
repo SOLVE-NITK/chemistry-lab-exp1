@@ -37,6 +37,6 @@ export function createTable(scene) {
   table.name = "labTable";
 
   scene.add(table);
-
+  
   return table;
 }

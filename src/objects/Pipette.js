@@ -66,5 +66,7 @@ tube.add(markingLayer);
 pipette.position.set(-2.5, 3.2, -1.5);
 pipette.rotation.z = Math.PI / 2;
 pipette.rotation.y = Math.PI / 2;
+
+pipette.name="pipette";
 return pipette;
 }

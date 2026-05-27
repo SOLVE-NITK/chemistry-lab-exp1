@@ -57,5 +57,6 @@ flask.add(labelMesh)
 
 flask.add(rim);
 
+flask.name = "flask";
   return flask;
 }
